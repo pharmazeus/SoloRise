@@ -10,19 +10,22 @@ const Navbar = async () => {
       <nav className="items-center justify-between flex">
         <Link href="/">
           <Image
-            src="/soloriseIcon.png"
+            src="/solorise1.png"
             alt="logo"
             width={100}
             height={90}
           ></Image>
         </Link>
 
-        <div className="flex items-center gap-7 text-black text-2xl font-semi-bold">
+        <div className="flex items-center gap-7 text-black text-1xl font-semi-bold">
           {session && session?.user ? (
             <>
               <Link href="/dashboard">Dashboard</Link>
               <Link href="/profile">Profile</Link>
               <Link href="/settings">Settings</Link>
+              <Link href={`/user/${session?.user?.id}`}>
+                <span>{session?.user?.name}</span>
+              </Link>
 
               <form
                 action={async () => {
